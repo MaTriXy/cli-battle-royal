@@ -4,7 +4,7 @@
 
 ## Input
 
-Each CLI was given the same UI screenshot ([view](input/ui.jpeg)) showing 6 screens of a "Methods" app:
+Each CLI was given the same UI screenshot ([view](input/ui.jpeg)) showing 6 screens of a "Methods" app (Credit: [Jay Dwivedi](https://x.com/jaydwivedi/status/1993306940823503037?s=20)):
 
 - Splash screen with ring logo
 - Phone number input
