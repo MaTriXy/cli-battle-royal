@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--gate-canary--native--claude-code--openai-codex--gpt-5-6-sol--r2",
+  "status": "shakeout",
+  "publishable": false,
+  "harness": {
+    "name": "claude-code",
+    "version": "2.1.206 (Claude Code)",
+    "lane": "native",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: claude -p --setting-sources project --disable-slash-commands --strict-mcp-config --effort high [Anthropic Messages adapter] [capability flags]"
+  },
+  "model": {
+    "providerRequested": "openai-codex",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "openai-codex",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "anthropic-messages-to-pi-ai-openai-codex",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:72ae7db288dbe92a48ec6a1b7fd09537f38225953f629f30d0c6002cfd16b9f7",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T10:50:50Z",
+    "endedAt": "2026-07-10T10:51:46Z",
+    "durationSeconds": 38,
+    "exitCode": 0
+  },
+  "metrics": {
+    "modelRequests": 7,
+    "toolCalls": 8,
+    "toolCallsByName": {
+      "Edit": 2,
+      "Bash": 4,
+      "Read": 2
+    },
+    "tokens": {
+      "input": 20096,
+      "output": 1020,
+      "cacheRead": 95232,
+      "cacheWrite": 0,
+      "reasoning": 370,
+      "total": 116348
+    },
+    "reportedCostUsd": 0.17869600000000002,
+    "filesChanged": 1,
+    "linesAdded": 1,
+    "linesDeleted": 0
+  },
+  "setup": {
+    "operatorSeconds": 1,
+    "dependencySetupSeconds": 4,
+    "hostVerificationSetupSeconds": 1,
+    "hostVerificationSetupExit": 0,
+    "commands": 1,
+    "projectFiles": 3,
+    "projectLines": 69,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      ".claude/hooks/spec-gate.sh": "a3dc6c61b8b62d7d1bcc06e3a1ba0f7a5bb2eb8c5e0d26a9fdb1b5cd89ad563a",
+      ".claude/settings.json": "478364d377da3a5bdfd05bf0c2e71f6b7249adc5a71c117cc70a6b8dbdac8dff",
+      "CLAUDE.md": "625990a81bf1896af60f3d2c9dbe3a0f931fb89bee1cdcc7b014f728a670d8eb"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "b438fb87c5edfd9f27d83ea84496184bf560e514d41c0d362a08c8245073eebe",
+      "bytes": 66
+    },
+    "diff.patch": {
+      "sha256": "4505ad54ae97d3d56d2a0d11642026788c039b9940b22734c983950acdcfd255",
+      "bytes": 262
+    },
+    "final.md": {
+      "sha256": "a769bdf2333cfab7992714bf82047c6c4bbb552ecf9861a325fcc5d5e1d5824e",
+      "bytes": 224
+    },
+    "gateway-metrics.jsonl": {
+      "sha256": "d99344a3b7814d628dc55c703a1fea44768e19ef98d6fe71a79d45372fac5fff",
+      "bytes": 4868
+    },
+    "git-status.txt": {
+      "sha256": "ca6944632d63c5a656f534d2734222db626f7971b3a46822bf86966ad6a8c290",
+      "bytes": 50
+    },
+    "limitations.md": {
+      "sha256": "bb1d0f3a2471a2dd7d8b2101ed7cecbe0176b95b2d7abee8f8780d7e693708ea",
+      "bytes": 690
+    },
+    "native-events.jsonl": {
+      "sha256": "9fc795a16115ee0f62d6fbab373ba65fc5863a8806d8ce7fa3ad44cdd7400be9",
+      "bytes": 68
+    },
+    "prompt.txt": {
+      "sha256": "7307fa94281561c87df3bb08d8458ba42a66d3d8c0588dc66cb047161739ea5d",
+      "bytes": 307
+    },
+    "scorecard.md": {
+      "sha256": "0dd66a525a625006c91b78dafe7730019b7692fc8857a517e7cc5d764ef1b90d",
+      "bytes": 475
+    },
+    "setup/.claude/hooks/spec-gate.sh": {
+      "sha256": "a3dc6c61b8b62d7d1bcc06e3a1ba0f7a5bb2eb8c5e0d26a9fdb1b5cd89ad563a",
+      "bytes": 655
+    },
+    "setup/.claude/settings.json": {
+      "sha256": "478364d377da3a5bdfd05bf0c2e71f6b7249adc5a71c117cc70a6b8dbdac8dff",
+      "bytes": 322
+    },
+    "setup/CLAUDE.md": {
+      "sha256": "625990a81bf1896af60f3d2c9dbe3a0f931fb89bee1cdcc7b014f728a670d8eb",
+      "bytes": 1295
+    },
+    "transcript.md": {
+      "sha256": "a8d62e9dca10dbad0d5dd84b5531f4103cd0c10537d5a1fa04581537d3fbbeeb",
+      "bytes": 2897
+    },
+    "verification.txt": {
+      "sha256": "f0a8f5c5f748e721f39a3e64c49062ffbbf4f83c086e2ff3fb7132f919bb0bc0",
+      "bytes": 228
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Claude Code used a lab-owned Anthropic Messages adapter backed by Pi AI's raw OpenAI Codex provider; the Pi agent loop was not loaded.",
+    "Anthropic does not support non-Claude models behind third-party gateways; this is experimental comparison infrastructure, not a supported production configuration.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature."
+  ]
+}

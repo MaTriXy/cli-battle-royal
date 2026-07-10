@@ -1,0 +1,45 @@
+diff --git a/packages/core/test/validate.test.ts b/packages/core/test/validate.test.ts
+index a00c238..d43188d 100644
+--- a/packages/core/test/validate.test.ts
++++ b/packages/core/test/validate.test.ts
+@@ -1,5 +1,5 @@
+ import { describe, expect, it } from "vitest";
+-import { getBlueprint, listBlueprints, loadSpecFromYaml, processRaw } from "../src/index.js";
++import { formatValidation, getBlueprint, listBlueprints, loadSpecFromYaml, processRaw, type LoopSpec } from "../src/index.js";
+ 
+ function codes(raw: unknown): string[] {
+   const r = processRaw(raw);
+@@ -59,6 +59,33 @@ describe("validator hard gates", () => {
+     expect(codes(raw)).toContain("bad-ref");
+   });
+ 
++  it("formats an invalid step condition diagnostic", () => {
++    const raw: LoopSpec = {
++      loopspec: "0.1",
++      id: "t",
++      pattern: "react",
++      state: { vars: { done: { type: "boolean", init: false } } },
++      body: [
++        {
++          id: "w",
++          kind: "agent",
++          harness: "claude-code",
++          prompt: "do",
++          when: "${state.nope == 1}",
++          on_done: { set: { done: true } },
++        },
++      ],
++      terminate: { signal: "state-predicate", until: "${state.done == true}" },
++      caps: { max_iterations: 5 },
++    };
++    const result = processRaw(raw);
++    const formatted = formatValidation(result.validation!);
++
++    expect(formatted).toContain("✗ invalid");
++    expect(formatted).toContain("[bad-ref]");
++    expect(formatted).toContain("(body[0]:w.when)");
++  });
++
+   it("requires explicit caps for a self-assess termination signal", () => {
+     const { caps, ...noCaps } = validBase;
+     void caps;

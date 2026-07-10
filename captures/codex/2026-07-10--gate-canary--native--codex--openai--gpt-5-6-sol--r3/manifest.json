@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--gate-canary--native--codex--openai--gpt-5-6-sol--r3",
+  "status": "invalid",
+  "publishable": false,
+  "harness": {
+    "name": "codex",
+    "version": "codex-cli 0.144.1",
+    "lane": "native",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: codex exec --ignore-user-config --ignore-rules --ephemeral --config chatgpt-http transport adapter [capability or safety flags]"
+  },
+  "model": {
+    "providerRequested": "openai",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "chatgpt-http",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "chatgpt-http-sse",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:72ae7db288dbe92a48ec6a1b7fd09537f38225953f629f30d0c6002cfd16b9f7",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T10:12:15Z",
+    "endedAt": "2026-07-10T10:12:24Z",
+    "durationSeconds": 3,
+    "exitCode": 1
+  },
+  "metrics": {
+    "modelRequests": null,
+    "toolCalls": 2,
+    "toolCallsByName": {
+      "error": 2
+    },
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "total": 0
+    },
+    "reportedCostUsd": 0,
+    "filesChanged": 0,
+    "linesAdded": 0,
+    "linesDeleted": 0
+  },
+  "setup": {
+    "operatorSeconds": 1,
+    "dependencySetupSeconds": 2,
+    "hostVerificationSetupSeconds": 1,
+    "hostVerificationSetupExit": 0,
+    "commands": 1,
+    "projectFiles": 3,
+    "projectLines": 62,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      ".codex/config.toml": "e685e2ecad4808a3d0912580f02eab80fbd83bb7026cd95dbb91c9beec45b4ff",
+      ".codex/hooks/spec-gate.sh": "0bd7805806b602403db11b0b5a86bae725b68911da27b9bb58861a43ea994d38",
+      "AGENTS.md": "7c3857324fd31ba1b1453d28d928839a9ba91ea491bdc2811f0b903db437abe8"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "diff.patch": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "final.md": {
+      "sha256": "51b7cd6fa85f83ade352ce3d903ec94f29078c883efcc2e45af8317352f3ce22",
+      "bytes": 44
+    },
+    "git-status.txt": {
+      "sha256": "ba051334ebc33f3162a4fd5be48615e03c8dac8ec7977e7c2752dbc1cf981841",
+      "bytes": 20
+    },
+    "limitations.md": {
+      "sha256": "ffba6ecba2fd46798fc07d5d84b014f65f1cc5893c5f2b93eb966a7afd85f459",
+      "bytes": 703
+    },
+    "prompt.txt": {
+      "sha256": "be85df7015b9bce254f60cf78aa0373050e47dd72719de5de40c6438cfb33b79",
+      "bytes": 227
+    },
+    "scorecard.md": {
+      "sha256": "9860a7161b0fa53c12e3692cea3a67ceff68cdd3b9f3cf6ec78e15fcc009effd",
+      "bytes": 568
+    },
+    "setup/.codex/config.toml": {
+      "sha256": "e685e2ecad4808a3d0912580f02eab80fbd83bb7026cd95dbb91c9beec45b4ff",
+      "bytes": 224
+    },
+    "setup/.codex/hooks/spec-gate.sh": {
+      "sha256": "0bd7805806b602403db11b0b5a86bae725b68911da27b9bb58861a43ea994d38",
+      "bytes": 632
+    },
+    "setup/AGENTS.md": {
+      "sha256": "7c3857324fd31ba1b1453d28d928839a9ba91ea491bdc2811f0b903db437abe8",
+      "bytes": 1295
+    },
+    "transcript.md": {
+      "sha256": "6363e82246b6b30bc1c81f391c68bc6ccfd2b96792c18bb2d8ba0df9627979f3",
+      "bytes": 459
+    },
+    "verification.txt": {
+      "sha256": "a96bdb02907c369735379d114b2ca5b1655d3b6eb2eec30c83639cc9c0ba1076",
+      "bytes": 228
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Codex project hooks are guardrails and do not intercept every possible shell or tool path.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature.",
+    "Codex used a recorded ChatGPT-auth HTTP/SSE provider adapter because its WebSocket transport did not route through the lab proxy.",
+    "Invalid run: OpenAI usage quota was unavailable before the agent could perform the task."
+  ]
+}

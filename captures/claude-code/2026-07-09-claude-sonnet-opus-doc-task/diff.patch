@@ -1,0 +1,14 @@
+diff --git a/examples/deploy-watch.yaml b/examples/deploy-watch.yaml
+index 7197793..5221ac2 100644
+--- a/examples/deploy-watch.yaml
++++ b/examples/deploy-watch.yaml
+@@ -1,3 +1,9 @@
++# poll-until — sleep between checks; act only when state calls for it; exit on a state predicate.
++# Poll a deploy's status endpoint on a timer. If it comes back red, let a coding agent push a
++# fix; if it's still pending, sleep and check again. The exit condition reads the HTTP response
++# (status == green), never the agent's own claim — use this pattern when the thing you're
++# waiting on has its own external status that changes on its own schedule (deploys, long jobs,
++# infra provisioning), not for work an agent can just finish in one pass.
+ loopspec: "0.1"
+ id: deploy-watch
+ meta:

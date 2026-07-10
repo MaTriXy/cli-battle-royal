@@ -1,0 +1,4 @@
+parsed: True
+id: deploy-watch
+pattern: poll-until
+exit=0

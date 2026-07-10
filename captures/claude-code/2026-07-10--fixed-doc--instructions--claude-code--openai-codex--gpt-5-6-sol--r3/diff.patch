@@ -1,0 +1,11 @@
+diff --git a/examples/deploy-watch.yaml b/examples/deploy-watch.yaml
+index 7197793..b08a7f9 100644
+--- a/examples/deploy-watch.yaml
++++ b/examples/deploy-watch.yaml
+@@ -1,3 +1,6 @@
++# Poll-until pattern: repeatedly check the external deploy status until it reports green.
++# Use this when completion depends on asynchronous external state that may change over time.
++# Prefer a one-pass task when one check or run can finish the work without waiting or polling.
+ loopspec: "0.1"
+ id: deploy-watch
+ meta:

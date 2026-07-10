@@ -1,0 +1,4 @@
+parsed: True
+id: test-green
+pattern: react
+exit=0

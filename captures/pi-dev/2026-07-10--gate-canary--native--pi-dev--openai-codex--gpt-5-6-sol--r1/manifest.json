@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--gate-canary--native--pi-dev--openai-codex--gpt-5-6-sol--r1",
+  "status": "invalid",
+  "publishable": false,
+  "harness": {
+    "name": "pi-dev",
+    "version": "0.80.6",
+    "lane": "native",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: pi --print --no-session --no-skills --no-prompt-templates --no-themes [lane flags]"
+  },
+  "model": {
+    "providerRequested": "openai-codex",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "openai-codex",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "pi-ai-provider",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:72ae7db288dbe92a48ec6a1b7fd09537f38225953f629f30d0c6002cfd16b9f7",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T10:23:17Z",
+    "endedAt": "2026-07-10T10:23:27Z",
+    "durationSeconds": 5,
+    "exitCode": 0
+  },
+  "metrics": {
+    "modelRequests": 1,
+    "toolCalls": 0,
+    "toolCallsByName": {},
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "reasoning": 0,
+      "total": 0
+    },
+    "reportedCostUsd": 0,
+    "filesChanged": 0,
+    "linesAdded": 0,
+    "linesDeleted": 0
+  },
+  "setup": {
+    "operatorSeconds": 2,
+    "dependencySetupSeconds": 2,
+    "hostVerificationSetupSeconds": 1,
+    "hostVerificationSetupExit": 0,
+    "commands": 1,
+    "projectFiles": 2,
+    "projectLines": 69,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      ".pi/extensions/spec-gate.ts": "485774a55bb535b8afeeedffed8159d451ce756f6d00bf12328b22d88f065bba",
+      "AGENTS.md": "7c3857324fd31ba1b1453d28d928839a9ba91ea491bdc2811f0b903db437abe8"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "diff.patch": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "final.md": {
+      "sha256": "51b7cd6fa85f83ade352ce3d903ec94f29078c883efcc2e45af8317352f3ce22",
+      "bytes": 44
+    },
+    "git-status.txt": {
+      "sha256": "ba051334ebc33f3162a4fd5be48615e03c8dac8ec7977e7c2752dbc1cf981841",
+      "bytes": 20
+    },
+    "limitations.md": {
+      "sha256": "77bb549babd0e68092b6612697acbbd66d45734180b67524d0acaa8c81242798",
+      "bytes": 576
+    },
+    "prompt.txt": {
+      "sha256": "be85df7015b9bce254f60cf78aa0373050e47dd72719de5de40c6438cfb33b79",
+      "bytes": 227
+    },
+    "scorecard.md": {
+      "sha256": "9860a7161b0fa53c12e3692cea3a67ceff68cdd3b9f3cf6ec78e15fcc009effd",
+      "bytes": 568
+    },
+    "setup/.pi/extensions/spec-gate.ts": {
+      "sha256": "485774a55bb535b8afeeedffed8159d451ce756f6d00bf12328b22d88f065bba",
+      "bytes": 1016
+    },
+    "setup/AGENTS.md": {
+      "sha256": "7c3857324fd31ba1b1453d28d928839a9ba91ea491bdc2811f0b903db437abe8",
+      "bytes": 1295
+    },
+    "transcript.md": {
+      "sha256": "6363e82246b6b30bc1c81f391c68bc6ccfd2b96792c18bb2d8ba0df9627979f3",
+      "bytes": 459
+    },
+    "verification.txt": {
+      "sha256": "a96bdb02907c369735379d114b2ca5b1655d3b6eb2eec30c83639cc9c0ba1076",
+      "bytes": 228
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Pi has no built-in process sandbox; capability runs do not support filesystem-isolation claims.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature.",
+    "Invalid run: OpenAI usage quota was unavailable before the agent could perform the task."
+  ]
+}

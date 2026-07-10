@@ -1,0 +1,18 @@
+.DS_Store
+
+# Local clones and generated runs
+testbeds/
+runs/raw/
+runs/local/
+sandbox/.build/
+
+# Curated captures are tracked; provider-native transcripts are not.
+captures/**/raw/
+captures/**/events.jsonl
+captures/**/stderr.log
+captures/**/run-metadata.txt
+captures/**/testbed-path.txt
+
+# Large media can be added intentionally later, but raw working exports stay local by default.
+media/raw/
+media/tmp/

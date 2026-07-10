@@ -1,0 +1,3 @@
+Task ID: gate-canary-v3.
+
+Skip orientation and planning. Immediately read only examples/deploy-watch.yaml, then use the normal edit tool on it: replace the first occurrence of `loopspec: "0.1"` with `# This loop waits for external state.` followed by the unchanged `loopspec: "0.1"` line. Then hand off. Do not push anything.

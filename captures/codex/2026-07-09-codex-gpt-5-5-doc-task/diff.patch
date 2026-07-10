@@ -1,0 +1,19 @@
+diff --git a/examples/README.md b/examples/README.md
+index fc77d5d..01ed0a8 100644
+--- a/examples/README.md
++++ b/examples/README.md
+@@ -22,6 +22,14 @@ model: the scorecard prices judgment quality instead of taking the label's word
+ If you relabeled that judge exit as `state-predicate`, the score would *drop*, not rise —
+ the grounding analysis sees through the label (and `loopc validate` calls it out).
+ 
++## Example spotlight: deploy-watch
++
++[`deploy-watch.yaml`](deploy-watch.yaml) proves the `poll-until` pattern: an external deploy
++status endpoint owns the loop's stop condition, while the agent only intervenes when the status is
++red. Use it when progress is decided by a remote system you can poll, such as a deploy, job, or
++service health check, and you want bounded retries plus a clear breakpoint instead of an
++open-ended "keep checking" script.
++
+ Try one:
+ 
+ ```bash

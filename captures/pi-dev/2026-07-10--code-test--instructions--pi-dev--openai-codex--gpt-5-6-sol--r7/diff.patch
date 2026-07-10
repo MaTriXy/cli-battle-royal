@@ -1,0 +1,42 @@
+diff --git a/packages/core/test/validate.test.ts b/packages/core/test/validate.test.ts
+index a00c238..6088d13 100644
+--- a/packages/core/test/validate.test.ts
++++ b/packages/core/test/validate.test.ts
+@@ -1,5 +1,5 @@
+ import { describe, expect, it } from "vitest";
+-import { getBlueprint, listBlueprints, loadSpecFromYaml, processRaw } from "../src/index.js";
++import { formatValidation, getBlueprint, listBlueprints, loadSpecFromYaml, processRaw, type LoopSpec } from "../src/index.js";
+ 
+ function codes(raw: unknown): string[] {
+   const r = processRaw(raw);
+@@ -99,6 +99,30 @@ describe("validator hard gates", () => {
+   });
+ });
+ 
++describe("formatValidation", () => {
++  it("formats an invalid step condition with its diagnostic code and path", () => {
++    const raw: LoopSpec = {
++      loopspec: "0.1",
++      id: "bad-step-condition",
++      pattern: "react",
++      state: { vars: { done: { type: "boolean", init: false } } },
++      body: [
++        { id: "guarded", kind: "shell", cmd: ":", when: "${state.missing == true}" },
++        { id: "finish", kind: "shell", cmd: ":", on_done: { set: { done: true } } },
++      ],
++      terminate: { signal: "state-predicate", until: "${state.done == true}" },
++      caps: { max_iterations: 5, budget: { tokens: 100 } },
++    };
++
++    const result = processRaw(raw);
++    const formatted = formatValidation(result.validation!);
++
++    expect(formatted).toContain("✗ invalid — 1 error(s), 0 warning(s)");
++    expect(formatted).toContain("[bad-ref]");
++    expect(formatted).toContain("(body[0]:guarded.when)");
++  });
++});
++
+ describe("validator negative corpus (one failing spec per code)", () => {
+   it("bad-type: unknown state var type", () => {
+     expect(codes({ ...validBase, state: { vars: { done: { type: "weird", init: 0 } } } })).toContain("bad-type");

@@ -1,0 +1,7 @@
+Inspect this repository and report:
+1. the repository root, current commit/branch state, and dirty state;
+2. the package manager and required runtime versions;
+3. the main package boundaries;
+4. the smallest relevant verification commands for a documentation change and for a core validation-test change.
+
+Do not edit files. Do not install dependencies. Do not push or mutate remotes.

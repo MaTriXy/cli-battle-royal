@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--gate-canary--native--pi-dev--openai-codex--gpt-5-6-sol--r3",
+  "status": "shakeout",
+  "publishable": false,
+  "harness": {
+    "name": "pi-dev",
+    "version": "0.80.6",
+    "lane": "native",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: pi --print --no-session --no-skills --no-prompt-templates --no-themes [lane flags]"
+  },
+  "model": {
+    "providerRequested": "openai-codex",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "openai-codex",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "pi-ai-provider",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:72ae7db288dbe92a48ec6a1b7fd09537f38225953f629f30d0c6002cfd16b9f7",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T10:50:03Z",
+    "endedAt": "2026-07-10T10:50:41Z",
+    "durationSeconds": 33,
+    "exitCode": 0
+  },
+  "metrics": {
+    "modelRequests": 8,
+    "toolCalls": 10,
+    "toolCallsByName": {
+      "edit": 2,
+      "bash": 4,
+      "read": 4
+    },
+    "tokens": {
+      "input": 9511,
+      "output": 1145,
+      "cacheRead": 15872,
+      "cacheWrite": 0,
+      "reasoning": 295,
+      "total": 26528
+    },
+    "reportedCostUsd": 0.089841,
+    "filesChanged": 1,
+    "linesAdded": 1,
+    "linesDeleted": 0
+  },
+  "setup": {
+    "operatorSeconds": 2,
+    "dependencySetupSeconds": 2,
+    "hostVerificationSetupSeconds": 2,
+    "hostVerificationSetupExit": 0,
+    "commands": 1,
+    "projectFiles": 2,
+    "projectLines": 69,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      ".pi/extensions/spec-gate.ts": "485774a55bb535b8afeeedffed8159d451ce756f6d00bf12328b22d88f065bba",
+      "AGENTS.md": "625990a81bf1896af60f3d2c9dbe3a0f931fb89bee1cdcc7b014f728a670d8eb"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "b438fb87c5edfd9f27d83ea84496184bf560e514d41c0d362a08c8245073eebe",
+      "bytes": 66
+    },
+    "diff.patch": {
+      "sha256": "4505ad54ae97d3d56d2a0d11642026788c039b9940b22734c983950acdcfd255",
+      "bytes": 262
+    },
+    "final.md": {
+      "sha256": "5dec79642fdc59004214755588e7a90b24ca68a6de978ee9f38381bf670b578f",
+      "bytes": 249
+    },
+    "git-status.txt": {
+      "sha256": "ca6944632d63c5a656f534d2734222db626f7971b3a46822bf86966ad6a8c290",
+      "bytes": 50
+    },
+    "limitations.md": {
+      "sha256": "d8b9dd0776d032734c4d06559813685c7bbcf344cfa00e5e614979972f8ea0cd",
+      "bytes": 485
+    },
+    "native-events.jsonl": {
+      "sha256": "49edd479f9f95e7c0d42e951963f49c1a13d2b9cf22d772bef7a98d03e9c3189",
+      "bytes": 174
+    },
+    "prompt.txt": {
+      "sha256": "7307fa94281561c87df3bb08d8458ba42a66d3d8c0588dc66cb047161739ea5d",
+      "bytes": 307
+    },
+    "scorecard.md": {
+      "sha256": "235aa32f8ccb875dc7971335be89c53e3d7f81c54886e21e14fe70849025bf84",
+      "bytes": 475
+    },
+    "setup/.pi/extensions/spec-gate.ts": {
+      "sha256": "485774a55bb535b8afeeedffed8159d451ce756f6d00bf12328b22d88f065bba",
+      "bytes": 1016
+    },
+    "setup/AGENTS.md": {
+      "sha256": "625990a81bf1896af60f3d2c9dbe3a0f931fb89bee1cdcc7b014f728a670d8eb",
+      "bytes": 1295
+    },
+    "transcript.md": {
+      "sha256": "5ae911abebe999568473e5eb75b74da7a605df61946afe381ce63913e2b20725",
+      "bytes": 3205
+    },
+    "verification.txt": {
+      "sha256": "1193655b676133e90114d7bec29668b50132e6f463aee6aaeea999d3c703c5fe",
+      "bytes": 228
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Pi has no built-in process sandbox; capability runs do not support filesystem-isolation claims.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature."
+  ]
+}

@@ -1,0 +1,9 @@
+Update only the leading comment block in examples/deploy-watch.yaml.
+
+The comment must help a new user understand:
+- that this is the poll-until pattern;
+- what external condition decides completion;
+- when this pattern is appropriate;
+- when a one-pass task would be more appropriate.
+
+Do not change YAML data, runtime behavior, or any other tracked file. Run the required targeted verification and do not push anything.

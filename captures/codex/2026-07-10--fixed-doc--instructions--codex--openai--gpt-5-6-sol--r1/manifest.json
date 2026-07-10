@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--fixed-doc--instructions--codex--openai--gpt-5-6-sol--r1",
+  "status": "shakeout",
+  "publishable": false,
+  "harness": {
+    "name": "codex",
+    "version": "codex-cli 0.144.1",
+    "lane": "instructions",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: codex exec --ignore-user-config --ignore-rules --ephemeral --config chatgpt-http transport adapter [capability or safety flags]"
+  },
+  "model": {
+    "providerRequested": "openai",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "chatgpt-http",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "chatgpt-http-sse",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:4479179aa303e15acf6dc1292748e9371f6c0ca85315bf964d9a39641f3faf15",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T08:20:09Z",
+    "endedAt": "2026-07-10T08:23:17Z",
+    "durationSeconds": 188,
+    "exitCode": 0
+  },
+  "metrics": {
+    "modelRequests": null,
+    "toolCalls": 14,
+    "toolCallsByName": {
+      "command_execution": 13,
+      "file_change": 1
+    },
+    "tokens": {
+      "input": 245703,
+      "output": 6769,
+      "cacheRead": 194048,
+      "cacheWrite": 0,
+      "reasoning": 3971,
+      "total": 446520
+    },
+    "reportedCostUsd": 0,
+    "filesChanged": 1,
+    "linesAdded": 4,
+    "linesDeleted": 0
+  },
+  "setup": {
+    "operatorSeconds": 3,
+    "commands": 1,
+    "projectFiles": 1,
+    "projectLines": 29,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      "AGENTS.md": "b83567be9bafc482c391c51aadf5d22f1f20bb8a109fe188ed2b6072179e66aa"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "2aacb03f0cabf67a9acfbd3f6a4b55d14cb98c191cbd2bca895b3346ac377bbd",
+      "bytes": 70
+    },
+    "diff.patch": {
+      "sha256": "d8b0f0cd8283da06a5a9f2f809433aa9e82c8cc2219b83f940d3130b413ae56e",
+      "bytes": 592
+    },
+    "final.md": {
+      "sha256": "b4f1284861672496c224c1cf0f95670b2ada4ed14083c9aa30f16bd664624516",
+      "bytes": 587
+    },
+    "git-status.txt": {
+      "sha256": "ca6944632d63c5a656f534d2734222db626f7971b3a46822bf86966ad6a8c290",
+      "bytes": 50
+    },
+    "limitations.md": {
+      "sha256": "fef6839ea9bca9c4e878b348efdb41aa5c22a2d914e5e331a798563afe1c7789",
+      "bytes": 612
+    },
+    "prompt.txt": {
+      "sha256": "7dfda24f09ffb89fe721b24c35158d4821133c09b4c32e234a09148028f9e2f8",
+      "bytes": 422
+    },
+    "scorecard.md": {
+      "sha256": "2dc134e54b46327a1ccb1f50bcf5cdb6155b2c7a5dacdd250792e871cd2b8c0d",
+      "bytes": 445
+    },
+    "setup/AGENTS.md": {
+      "sha256": "b83567be9bafc482c391c51aadf5d22f1f20bb8a109fe188ed2b6072179e66aa",
+      "bytes": 960
+    },
+    "transcript.md": {
+      "sha256": "4edce20523d56af3b6c4f903f4997768a515eefd7e2677cf1b4cdb52e5c23990",
+      "bytes": 8836
+    },
+    "verification.txt": {
+      "sha256": "045a3d46b9d1e6df2fb197218f3d9dde6c6eb1d51fed1c44e019be9a828f55e9",
+      "bytes": 222
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Codex project hooks are guardrails and do not intercept every possible shell or tool path.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature.",
+    "Codex used a recorded ChatGPT-auth HTTP/SSE provider adapter because its WebSocket transport did not route through the lab proxy."
+  ]
+}

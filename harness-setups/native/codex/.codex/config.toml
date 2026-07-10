@@ -1,0 +1,9 @@
+[hooks]
+
+[[hooks.PreToolUse]]
+matcher = "Edit|Write"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "bash \"$(git rev-parse --show-toplevel)/.codex/hooks/spec-gate.sh\""
+statusMessage = "Checking the lab spec gate"

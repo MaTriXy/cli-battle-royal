@@ -1,0 +1,15 @@
+diff --git a/examples/test-green.yaml b/examples/test-green.yaml
+index e2c5506..a39332c 100644
+--- a/examples/test-green.yaml
++++ b/examples/test-green.yaml
+@@ -1,6 +1,8 @@
+ # react — reason-act-observe until the goal is met.
+-# A coding agent fixes the build until the test suite exits 0. The exit signal is an
+-# ORACLE: the shell exit code decides, never the agent's own claim of success.
++# Use this pattern when a fast, deterministic command can prove the work is done,
++# such as a unit test suite, linter, or build check. This example proves that the
++# agent is only responsible for making changes; the shell exit code is the ORACLE
++# that decides when the loop stops, never the agent's own claim of success.
+ loopspec: "0.1"
+ id: test-green
+ meta:

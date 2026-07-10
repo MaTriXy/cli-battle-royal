@@ -1,0 +1,12 @@
+diff --git a/examples/deploy-watch.yaml b/examples/deploy-watch.yaml
+index 7197793..589dca1 100644
+--- a/examples/deploy-watch.yaml
++++ b/examples/deploy-watch.yaml
+@@ -1,3 +1,7 @@
++# poll-until — repeatedly check an external condition until it signals completion.
++# Here, each response from the deploy status endpoint supplies the state; the run completes
++# when that state is green. Use this pattern when an asynchronous external process needs
++# monitoring or repeated intervention; use a one-pass task when one check or action is enough.
+ loopspec: "0.1"
+ id: deploy-watch
+ meta:

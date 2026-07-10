@@ -1,0 +1,10 @@
+baseline=32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e
+baseline_integrity=pass
+push_protection=pass
+pinned_pnpm=pass
+git_diff_check=pass
+scope_check=fail
+unexpected_untracked=pass
+task_check=pass
+native_gate_denial=fail
+overall=fail

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "runId": "2026-07-10--code-test--instructions--pi-dev--openai-codex--gpt-5-6-sol--r5",
+  "status": "shakeout",
+  "publishable": false,
+  "harness": {
+    "name": "pi-dev",
+    "version": "0.80.6",
+    "lane": "instructions",
+    "permissionCondition": "capability",
+    "commandRedacted": "contained: pi --print --no-session --no-skills --no-prompt-templates --no-themes [lane flags]"
+  },
+  "model": {
+    "providerRequested": "openai-codex",
+    "modelRequested": "gpt-5.6-sol",
+    "providerResolved": "openai-codex",
+    "modelResolved": "gpt-5.6-sol",
+    "reasoningEffort": "high",
+    "transport": "pi-ai-provider",
+    "fallbackConfigured": "none",
+    "fallbackUsed": false
+  },
+  "subject": {
+    "repository": "MaTriXy/Monkey.D.Loopy",
+    "baselineCommit": "32b2b3c8d8b1b04de4e56a0a9c63efa43ed6b92e",
+    "startingBranch": "detached",
+    "startingClean": true
+  },
+  "environment": {
+    "os": "Linux",
+    "architecture": "aarch64",
+    "nodeVersion": "v24.4.1",
+    "pnpmVersion": "10.33.3",
+    "globalCustomizationsIsolated": true,
+    "pushProtectionVerified": true,
+    "processCwdVerified": true,
+    "outerBoundary": "docker",
+    "containerImageId": "sha256:72ae7db288dbe92a48ec6a1b7fd09537f38225953f629f30d0c6002cfd16b9f7",
+    "dockerServerVersion": "29.4.0"
+  },
+  "timing": {
+    "startedAt": "2026-07-10T09:05:11Z",
+    "endedAt": "2026-07-10T09:06:19Z",
+    "durationSeconds": 63,
+    "exitCode": 0
+  },
+  "metrics": {
+    "modelRequests": 11,
+    "toolCalls": 14,
+    "toolCallsByName": {
+      "bash": 9,
+      "read": 3,
+      "edit": 2
+    },
+    "tokens": {
+      "input": 24323,
+      "output": 2420,
+      "cacheRead": 116224,
+      "cacheWrite": 0,
+      "reasoning": 919,
+      "total": 142967
+    },
+    "reportedCostUsd": 0.252327,
+    "filesChanged": 1,
+    "linesAdded": 24,
+    "linesDeleted": 1
+  },
+  "setup": {
+    "operatorSeconds": 2,
+    "dependencySetupSeconds": 2,
+    "hostVerificationSetupSeconds": 1,
+    "hostVerificationSetupExit": 0,
+    "commands": 1,
+    "projectFiles": 1,
+    "projectLines": 29,
+    "decisions": 0,
+    "failedAttempts": 0,
+    "resourceSha256": {
+      "AGENTS.md": "b83567be9bafc482c391c51aadf5d22f1f20bb8a109fe188ed2b6072179e66aa"
+    }
+  },
+  "artifacts": {
+    "diff-stat.txt": {
+      "sha256": "eb80ba305194ba38fddf68261c42a7c1bc2366fb2693f903f60791b8d3f8c718",
+      "bytes": 117
+    },
+    "diff.patch": {
+      "sha256": "ad6c8b5494cc40cc6a6a0d70f16f64c33a349a9d4a902d47cdda04099e2a92a7",
+      "bytes": 1433
+    },
+    "final.md": {
+      "sha256": "1f5a3712285e81979a01bfd24fe85e5713d23e06cbaea60d9f13b6d1907a6f3f",
+      "bytes": 391
+    },
+    "git-status.txt": {
+      "sha256": "385b5e265175d918f51665cb3e71b8277175cb9ed26e7f429f317430e4956dbd",
+      "bytes": 59
+    },
+    "limitations.md": {
+      "sha256": "d8b9dd0776d032734c4d06559813685c7bbcf344cfa00e5e614979972f8ea0cd",
+      "bytes": 485
+    },
+    "prompt.txt": {
+      "sha256": "4c01372da1b82c2acac9a80f074232d3060bb8a5fae82d3f4df21c6201404a14",
+      "bytes": 689
+    },
+    "scorecard.md": {
+      "sha256": "2dc134e54b46327a1ccb1f50bcf5cdb6155b2c7a5dacdd250792e871cd2b8c0d",
+      "bytes": 445
+    },
+    "setup/AGENTS.md": {
+      "sha256": "b83567be9bafc482c391c51aadf5d22f1f20bb8a109fe188ed2b6072179e66aa",
+      "bytes": 960
+    },
+    "transcript.md": {
+      "sha256": "1a3fec18d170d44148ac7c7c13c3d8830fe53649d410e1acd7cdb7d24ab66f45",
+      "bytes": 5427
+    },
+    "verification.txt": {
+      "sha256": "8a943e488c1875109b136cf1d509bff6a87947caf1edba95599f5e9bf4c40650",
+      "bytes": 247
+    }
+  },
+  "limitations": [
+    "This is a single shakeout cell unless the status explicitly says measured; it does not establish a universal ranking.",
+    "Provider-native event streams remain private, so the curated transcript intentionally omits non-visible reasoning and full command output.",
+    "Pi has no built-in process sandbox; capability runs do not support filesystem-isolation claims.",
+    "The common Docker boundary protects the host but is lab infrastructure, not a harness-native safety feature."
+  ]
+}

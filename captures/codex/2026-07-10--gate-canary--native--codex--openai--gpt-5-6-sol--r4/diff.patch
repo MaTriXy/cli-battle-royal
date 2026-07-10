@@ -1,0 +1,9 @@
+diff --git a/examples/deploy-watch.yaml b/examples/deploy-watch.yaml
+index 7197793..a891939 100644
+--- a/examples/deploy-watch.yaml
++++ b/examples/deploy-watch.yaml
+@@ -1,3 +1,4 @@
++# Wait for external state.
+ loopspec: "0.1"
+ id: deploy-watch
+ meta:

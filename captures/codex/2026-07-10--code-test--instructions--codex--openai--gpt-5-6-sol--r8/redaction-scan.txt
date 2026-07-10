@@ -1,0 +1,2 @@
+redaction_scan=pass
+manual_review=required
